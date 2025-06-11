@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:19:28 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/11 14:04:19 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/11 15:05:26 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Bureaucrat::Bureaucrat() : m_name("unnamed"), m_grade(150){
 }
 
-Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grade(grade){
+Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name){
 	if (grade < 1)
 	{
 		std::cout << "Bureaucrat " << m_name << " not created: ";
@@ -27,11 +27,13 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grad
 		throw GradeTooLowException();
 	}
 	else
+	{
+		m_grade = grade;
 		std::cout << "Bureaucrat " << m_name << " created with grade " << grade << "." << std::endl;
+	}
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &other) : m_name(other.m_name),
-	m_grade(other.m_grade){
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : m_name(other.m_name),	m_grade(other.m_grade){
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other){
