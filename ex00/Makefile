@@ -24,7 +24,7 @@ $(OBJ_DIR)/%.o: %.cpp
 	@if [ $(COUNT) -eq 1 ]; then \
 		printf "\n"; \
 	fi
-	@printf "\033[1A\033[2KCompilen $< \t ($(COUNT)/$(TOTAL))\n";
+	@printf "\033[1A\033[2KCompilen ($(COUNT)/$(TOTAL)) $<\n";
 	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
