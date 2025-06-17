@@ -2,7 +2,7 @@ NAME = a.out
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++17
 
-OBJ_DIR := obj_dir
+OBJ_DIR := obj
 
 SRCS := main.cpp Bureaucrat.cpp Form.cpp
 
