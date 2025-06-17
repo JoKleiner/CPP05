@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:19:28 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/17 12:28:52 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/17 15:31:49 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,23 @@ void Bureaucrat::signForm(Form &form) const {
 	{
 		form.beSigned();
 		std::cout << m_name << " signs " << form.getName() << "." << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(const Form &form) const {
+	if (!form.isSigned())
+	{
+		std::cout << m_name << " cannot execute " << form.getName() << " because it is not signed." << std::endl;
+		return;
+	}
+	if (m_grade > form.getExecGrade())
+	{
+		std::cout << m_name << " cannot execute " << form.getName() << " because ";
+		throw GradeTooLowException();
+	}
+	else
+	{
+		std::cout << m_name << " executes " << form.getName() << "." << std::endl;
 	}
 }
 
