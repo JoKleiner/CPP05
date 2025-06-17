@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:22:54 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/17 12:30:54 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/17 14:41:18 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	main(void)
     catch(const std::exception& e) {
         std::cout << e.what() << std::endl;}
     
-
         
     std::cout << "\ntry to create forms" << std::endl;
     try {
@@ -54,38 +53,59 @@ int	main(void)
     catch (const std::exception &e) {
         std::cout << e.what() << std::endl;}
     
+    
     if(per2)
     {
         std::cout << "\n" << *per2 << std::endl;
-        try {
-            per2->signForm(*form1);
+        if (form1)
+        {
+            try {
+                per2->signForm(*form1);
+            }
+            catch (const std::exception &e) {
+                std::cout << e.what() << std::endl;
+            }
         }
-        catch (const std::exception &e) {
-            std::cout << e.what() << std::endl;
+        if(form2)
+        {
+            try{
+                per2->signForm(*form2);
+            }
+            catch (const std::exception &e) {
+                std::cout << e.what() << std::endl;
+            }
         }
-        try{
-            per2->signForm(*form2);
-        }
-        catch (const std::exception &e) {
-            std::cout << e.what() << std::endl;
-        }
+        delete per2;
     }
 
+    
     if(per1)
     {
         std::cout << "\n" << *per1 << std::endl;
-        try {
-            per1->signForm(*form1);
+        if(form1)
+        {
+            try {
+                per1->signForm(*form1);
+            }
+            catch (const std::exception &e) {
+                std::cout << e.what() << std::endl;
+            }
         }
-        catch (const std::exception &e) {
-            std::cout << e.what() << std::endl;
+        if(form2)
+        {
+            try{
+                per1->signForm(*form2);
+            }
+            catch (const std::exception &e) {
+                std::cout << e.what() << std::endl;
+            }
         }
-        try{
-            per1->signForm(*form2);
-        }
-        catch (const std::exception &e) {
-            std::cout << e.what() << std::endl;
-        }
+        delete per1;
     }
+
     
+    if(form1)
+        delete form1;
+    if(form2)
+        delete form2;
 }
