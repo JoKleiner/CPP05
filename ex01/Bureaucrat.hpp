@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:18:34 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/17 15:31:54 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/18 17:02:06 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include "Form.hpp"
 
-class From;
+class Form;
 
 class Bureaucrat
 {
