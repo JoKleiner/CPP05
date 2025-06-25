@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:22:54 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/25 14:22:52 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/25 14:40:06 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	main()
     std::cout << "\n________________________________________\n\nsign and execute shrubby:\n" << std::endl;
     try {
         bureauc1.signForm(shrubby);
-    } catch (const std::exception &exept) {
-        std::cerr << exept.what() << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
     }
 
     try {
         bureauc1.executeForm(shrubby);
-    } catch (const std::exception &exept) {
-        std::cerr << exept.what() << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
     }
 
     std::cout << "\n________________________________________\n\nsign and execute pardon:\n" << std::endl;
@@ -48,8 +48,8 @@ int	main()
 
     try {
         bureauc2.executeForm(pardon);
-    } catch (const std::exception &exept) {
-        std::cerr << exept.what() << std::endl;
+    } catch (const std::exception &e) {
+        std::cerr << e.what() << std::endl;
     }
 
     std::cout << "\n________________________________________\n\nsign and execute roboty 5 times:\n" << std::endl;
@@ -66,8 +66,8 @@ int	main()
         std::cout << i << ": ";
         try {
             bureauc1.executeForm(roboty);
-        } catch (const std::exception &exept) {
-            std::cerr << exept.what() << std::endl;
+        } catch (const std::exception &e) {
+            std::cerr << e.what() << std::endl;
         }
         std::cout << std::endl;
     }
