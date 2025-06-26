@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:56 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/17 15:07:01 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/26 14:52:22 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Form::Form() : m_name("unnamed"), m_signGrade(150), m_execGrade(150), m_signed(false){
 }
 
-Form::Form(std::string name, int signGrade, int execGrade) : m_name(name), m_signed(false){
+Form::Form(std::string name, int signGrade, int execGrade) : m_name(name), m_signGrade(signGrade), m_execGrade(execGrade), m_signed(false){
 	if (signGrade < 1 || execGrade < 1)
 	{
 		std::cout << "Form " << m_name << " not created: ";
@@ -28,8 +28,6 @@ Form::Form(std::string name, int signGrade, int execGrade) : m_name(name), m_sig
 	}
 	else
 	{
-		m_signGrade = signGrade;
-		m_execGrade = execGrade;
 		std::cout << "Form " << m_name << " created with sign grade " << signGrade << " and exec grade " << execGrade << "." << std::endl;
 	}
 }
@@ -41,12 +39,7 @@ Form::Form(const Form &other) : m_name(other.m_name),
 
 Form &Form::operator=(const Form &other){
 	if (this != &other)
-	{
-		this->m_name = other.m_name;
-		this->m_signGrade = other.m_signGrade;
-		this->m_execGrade = other.m_execGrade;
 		this->m_signed = other.m_signed;
-	}
 	return (*this);
 }
 

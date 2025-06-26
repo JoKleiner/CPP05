@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:56 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/25 12:43:52 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/26 15:00:47 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 AForm::AForm() : m_name("unnamed"), m_signGrade(150), m_execGrade(150), m_signed(false), m_target("no_target"){
 }
 
-AForm::AForm(std::string name, int signGrade, int execGrade, std::string target) : m_name(name), m_signed(false), m_target(target){
+AForm::AForm(std::string name, int signGrade, int execGrade, std::string target) : m_name(name), m_signGrade(signGrade), m_execGrade(execGrade), m_signed(false), m_target(target){
 	if (signGrade < 1 || execGrade < 1)
 	{
 		std::cout << "AForm " << m_name << " not created: ";
@@ -28,8 +28,6 @@ AForm::AForm(std::string name, int signGrade, int execGrade, std::string target)
 	}
 	else
 	{
-		m_signGrade = signGrade;
-		m_execGrade = execGrade;
 		std::cout << "AForm " << m_name << " created with sign grade " << signGrade << " and exec grade " << execGrade << "." << std::endl;
 	}
 }
@@ -42,9 +40,6 @@ AForm::AForm(const AForm &other) : m_name(other.m_name),
 AForm &AForm::operator=(const AForm &other){
 	if (this != &other)
 	{
-		this->m_name = other.m_name;
-		this->m_signGrade = other.m_signGrade;
-		this->m_execGrade = other.m_execGrade;
 		this->m_signed = other.m_signed;
 	}
 	return (*this);

@@ -50,11 +50,11 @@ class AForm
 	};
 
   private:
-	std::string	m_name;
-	int 		m_signGrade;
-	int 		m_execGrade;
+	const std::string	m_name;
+	const int 		m_signGrade;
+	const int 		m_execGrade;
 	bool 		m_signed;
-	std::string	m_target;
+	const std::string	m_target;
 };
 
 std::ostream &operator<<(std::ostream &out, const AForm &other);

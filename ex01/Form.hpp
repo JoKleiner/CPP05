@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:38 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/17 15:06:55 by joklein          ###   ########.fr       */
+/*   Updated: 2025/06/26 14:52:58 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@ class Bureaucrat;
 
 class Form
 {
-  public:
+  private:
 	Form();
+		
+  public:
 	Form(std::string name, int signGrade, int execGrade);
 	Form(const Form &other);
 	Form &operator=(const Form &other);
@@ -46,9 +48,9 @@ class Form
 	};
 
   private:
-	std::string m_name;
-	int m_signGrade;
-	int m_execGrade;
+	const std::string m_name;
+	const int m_signGrade;
+	const int m_execGrade;
 	bool m_signed;
 };
 
