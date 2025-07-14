@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:38 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/26 14:52:58 by joklein          ###   ########.fr       */
+/*   Updated: 2025/07/14 14:26:35 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,16 +35,12 @@ class Form
 	
 	class GradeTooHighException final : public std::exception {
 		public:
-		const char *what() const noexcept override {
-			return ("Grade is too high!");
-		}
+		const char *what() const noexcept override;
 	};
 
 	class GradeTooLowException final : public std::exception {
 		public:
-		const char *what() const noexcept override {
-			return ("Grade is too low!");
-		}
+		const char *what() const noexcept override;
 	};
 
   private:

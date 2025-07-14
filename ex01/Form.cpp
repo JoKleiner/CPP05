@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:56 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/26 14:52:22 by joklein          ###   ########.fr       */
+/*   Updated: 2025/07/14 14:27:00 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,14 @@ bool Form::isSigned() const{
 
 void Form::beSigned(){
 	this->m_signed = true;
+}
+
+const char* Form::GradeTooHighException::what() const noexcept {
+	return ("Grade is too high!");
+}
+
+const char* Form::GradeTooLowException::what() const noexcept {
+	return ("Grade is too low!");
 }
 
 std::ostream &operator<<(std::ostream &out, const Form &other){
