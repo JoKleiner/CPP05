@@ -37,16 +37,12 @@ class AForm
 	
 	class GradeTooHighException final : public std::exception {
 		public:
-		const char *what() const noexcept override {
-			return ("Grade is too high!");
-		}
+		const char *what() const noexcept override;
 	};
 
 	class GradeTooLowException final : public std::exception {
 		public:
-		const char *what() const noexcept override {
-			return ("Grade is too low!");
-		}
+		const char *what() const noexcept override;
 	};
 
   private:

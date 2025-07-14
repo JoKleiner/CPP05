@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/11 14:09:56 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/26 15:00:47 by joklein          ###   ########.fr       */
+/*   Updated: 2025/07/14 14:27:42 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,14 @@ void AForm::beSigned(){
 
 std::string AForm::getTarget() const{
 	return (this->m_target);
+}
+
+const char* AForm::GradeTooHighException::what() const noexcept {
+	return ("Grade is too high!");
+}
+
+const char* AForm::GradeTooLowException::what() const noexcept {
+	return ("Grade is too low!");
 }
 
 std::ostream &operator<<(std::ostream &out, const AForm &other){
