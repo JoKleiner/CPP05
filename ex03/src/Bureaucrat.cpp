@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:19:28 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/25 12:49:16 by joklein          ###   ########.fr       */
+/*   Updated: 2025/07/14 14:16:45 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,14 @@ void Bureaucrat::executeForm(const AForm &form) const {
 		std::cout << m_name << " executed " << form.getName() << "." << std::endl;
 		form.execute(*this);
 	}
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const noexcept {
+	return ("Grade is too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const noexcept {
+	return ("Grade is too low!");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &other){
