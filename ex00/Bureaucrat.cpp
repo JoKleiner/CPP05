@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:19:28 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/11 15:05:26 by joklein          ###   ########.fr       */
+/*   Updated: 2025/07/14 14:13:15 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,14 @@ void Bureaucrat::decrementGrade(){
 		throw GradeTooLowException();
 	else
 		m_grade++;
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const noexcept {
+	return ("Grade is too high!");
+}
+
+const char* Bureaucrat::GradeTooLowException::what() const noexcept {
+	return ("Grade is too low!");
 }
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &other){
