@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:18:34 by joklein           #+#    #+#             */
-/*   Updated: 2025/06/25 12:24:50 by joklein          ###   ########.fr       */
+/*   Updated: 2025/07/14 14:15:33 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,12 @@ class Bureaucrat
 	
 	class GradeTooHighException final : public std::exception {
 		public:
-		const char *what() const noexcept override {
-			return ("Grade is too high!");
-		}
+		const char *what() const noexcept override;
 	};
 
 	class GradeTooLowException final : public std::exception {
 		public:
-		const char *what() const noexcept override {
-			return ("Grade is too low!");
-		}
+		const char *what() const noexcept override;
 	};
 
   private:
