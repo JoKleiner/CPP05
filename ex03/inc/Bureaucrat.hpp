@@ -6,7 +6,7 @@
 /*   By: joklein <joklein@student.42heilbronn.de    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/03 14:18:34 by joklein           #+#    #+#             */
-/*   Updated: 2025/07/14 14:16:37 by joklein          ###   ########.fr       */
+/*   Updated: 2025/07/15 16:51:54 by joklein          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,11 @@ class Bureaucrat
 	void decrementGrade();
 	void signForm(class AForm &form) const;
 	void executeForm(const AForm &form) const;
-	
+
+  private:
+	const std::string m_name;
+	int m_grade;
+
 	class GradeTooHighException final : public std::exception {
 		public:
 		const char *what() const noexcept override;
@@ -43,10 +47,6 @@ class Bureaucrat
 		public:
 		const char *what() const noexcept override;
 	};
-
-  private:
-	const std::string m_name;
-	int m_grade;
 };
 
 std::ostream &operator<<(std::ostream &out, const Bureaucrat &other);
